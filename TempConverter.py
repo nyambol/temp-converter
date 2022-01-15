@@ -9,6 +9,10 @@
 # C to F
 # (C * 9/5) + 32 = F
 # (C * 9)/5 + 32 = F
+#
+# (F − 32) × 5/9 + 273.15 = K
+# (((F - 32) * 5)/9) + 273.15 = K
+# C + 273.15 = K
 
 
 class TempConverter:
@@ -27,7 +31,7 @@ class TempConverter:
     def __init__():
         pass
 
-    default_temp: float = 99.99
+    default_temp: float = -9999.99
 
     @classmethod
     def convert(cls, temp: float, type: str) -> float:
@@ -41,6 +45,7 @@ class TempConverter:
         else:
             print("Invalid temperature type. It must be either 'F' or 'C'.")
             new_temp = cls.default_temp
+            print("{}°{}".format(new_temp, type))
 
         return new_temp
 
