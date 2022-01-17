@@ -12,17 +12,21 @@
 #
 # (F − 32) × 5/9 + 273.15 = K
 # (((F - 32) * 5)/9) + 273.15 = K
-# C + 273.15 = K
+# C° + 273.15 = K°
 
 
 class TempConverter:
     """
     Class to convert a given temperature from a given type to the other type
 
-    Usage: ~from TempConverter import *~
+    Usage: What temperature to convert?
+           -273.15
+           What system to convert from ('c' or 'f')
+           c
+           -273.1°C is -459.7°F
 
     Functions:
-         convert(temp, type) -> float
+         convert(temperature, type) -> float
 
     Variables:
          default_temp
@@ -34,14 +38,14 @@ class TempConverter:
     default_temp: float = -9999.99
 
     @classmethod
-    def convert(cls, temp: float, type: str) -> float:
+    def convert(cls, temperature: float, type: str) -> float:
 
         type = type.upper()
 
         if type == "F":
-            new_temp = ((temp - 32) * 5) / 9
+            new_temp = ((temperature - 32) * 5) / 9
         elif type == "C":
-            new_temp = (temp * 9) / 5 + 32
+            new_temp = (temperature * 9) / 5 + 32
         else:
             print("Invalid temperature type. It must be either 'F' or 'C'.")
             new_temp = cls.default_temp
