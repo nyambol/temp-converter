@@ -43,7 +43,7 @@ class TempConverter:
         type = type.upper()
 
         if type == "F":
-            new_temp = ((temperature - 32) * 5) / 9
+            new_temp: float = ((temperature - 32) * 5) / 9
         elif type == "C":
             new_temp = (temperature * 9) / 5 + 32
         else:
